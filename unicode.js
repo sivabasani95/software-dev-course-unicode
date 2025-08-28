@@ -89,12 +89,27 @@ let inputString1 = "Code";
 let firstCodePoint; // Your code here
 let thirdCodePoint; // Your code here
 
+let word1 = "Code";
+let firstCodePoint = word1.charCodeAt(0); // 'C' = 67
+let thirdCodePoint = word1.charCodeAt(2); // 'd' = 100
+console.log("firstCodePoint:", firstCodePoint);   // Expected: 67
+console.log("thirdCodePoint:", thirdCodePoint);   // Expected: 100
+
+
 // Task 2
 let wordFromCodePoints; // Your code here
+
+let wordFromCodePoints = String.fromCharCode(72, 101, 108, 108); // "Hell"
+console.log("wordFromCodePoints:", wordFromCodePoints); // Expected: "Hell"
+
 
 // Task 3
 let inputString2 = "Launch";
 let swappedString; // Your code here
+
+let originalString = "Launch";
+let firstCharCode = originalString.charCodeAt(0); // 'L' = 76
+let lastCharCode = originalString.charCodeAt(originalString.length - 1); // 'h' = 104
 
 // Log all results
 console.log({
@@ -103,3 +118,10 @@ console.log({
   wordFromCodePoints,
   swappedString,
 });
+
+// Reconstruct string: swap first and last character
+let swappedString = String.fromCharCode(lastCharCode) +
+                    originalString.slice(1, -1) +
+                    String.fromCharCode(firstCharCode);
+
+console.log("swappedString:", swappedString); // Expected: "hauncL"
